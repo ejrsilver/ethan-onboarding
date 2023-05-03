@@ -1,27 +1,17 @@
 import {useState} from 'react';
 import Link from 'next/link';
-
-function Header({title}) {
-    return <h1>{title ? title : 'Default Title'}</h1>;
-}
+import  {Container}  from '@mui/material';
+import {Typography} from '@mui/material';
+import {Box} from '@mui/material';
+import {Button} from '@mui/material';
 
 export default function HomePage() {
-    const names = ['Charles Dickens', 'Eleanor Rigby', 'Kimberle Crenshaw'];
-    const [likes, setLikes] = useState(0);
-
-    function handleClick() {
-        setLikes(likes + 1);
-    }
-
     return(
-        <div>
-            <Header title="Develop. Preview. Ship. 🚀" />
-            <ul>
-                {names.map((name) => (<li key={name}>{name}</li>))}
-            </ul>
-
-            <button onClick={handleClick}>Like ({likes})</button>
-            <h2><Link href="/main-campus/map">View Map</Link></h2>
-            </div>
+        <Container>
+            <Box sx={{my:4}}>
+                <Typography component="h1" variant="h1">Develop. Preview. Ship. 🚀</Typography>
+                <Link href="/main-campus/map"><Button variant="contained">View Map</Button></Link>
+            </Box>
+        </Container>
     );
 }
