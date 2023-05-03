@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Link from 'next/link';
 
 function Header({title}) {
     return <h1>{title ? title : 'Default Title'}</h1>;
@@ -20,6 +21,7 @@ export default function HomePage() {
             </ul>
 
             <button onClick={handleClick}>Like ({likes})</button>
+            <h2><Link href="/main-campus/map">View Map</Link></h2>
             </div>
     );
 }

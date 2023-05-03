@@ -1,16 +1,17 @@
 {
-  "name": "nextjs-starter",
+  "name": "ethan-onboarding",
   "version": "1.0.0",
-  "description": "Next.js on Docker - start",
+  "description": "Next.js - starter app",
   "author": "Ethan Silver <es136@queensu.ca>",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "start": "node index.js"
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "next": "^13.3.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
