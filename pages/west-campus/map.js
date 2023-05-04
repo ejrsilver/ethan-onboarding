@@ -4,15 +4,15 @@ import {Button} from '@mui/material';
 import Link from 'next/link';
 import Head from 'next/head';
 
-export default function MainMap() {
+export default function WestMap() {
     return(
         <>
         <Head>
-            <title>Main Campus - Queen's University Accessible Maps</title>
+            <title>West Campus - Queen's University Accessible Maps</title>
         </Head>
         <Container>
-                <Typography component="h1" variant="h1">Main Campus Map</Typography>
-                <Link href="/"><Button variant="contained">Back</Button></Link>
+            <Typography component="h1" variant="h1">West Campus Map</Typography>
+            <Link href="/"><Button variant="contained">Back</Button></Link>
         </Container>
         </>
     );
