@@ -1,7 +1,7 @@
 {
   "name": "ethan-onboarding",
   "version": "1.0.0",
-  "description": "Next.js - starter app",
+  "description": "Queen's Unviersity Accessible Maps",
   "author": "Ethan Silver <es136@queensu.ca>",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
     "@mui/material": "^5.12.3",
     "leaflet": "^1.9.3",
     "leaflet-defaulticon-compatibility": "^0.1.1",

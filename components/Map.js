@@ -9,13 +9,13 @@ export default function Map() {
       center={[40.8054, -74.0241]}
       zoom={14}
       scrollWheelZoom={false}
-      style={{ height: "400", width: "400" }}
+      style={{ height: "100%"}}
     >
       <TileLayer
       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-      <Marker position={[40.8054, -74.0241]} draggable={true} animate={true}>
+      <Marker position={[40.8054, -74.0241]}>
         <Popup>Hey ! I live here</Popup>
       </Marker>
     </MapContainer>
