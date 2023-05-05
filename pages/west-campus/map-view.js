@@ -2,7 +2,6 @@ import  {Container}  from '@mui/material';
 import {Typography} from '@mui/material';
 import {Button} from '@mui/material';
 import Link from 'next/link';
-import Script from 'next/script';
 import Layout from '../../components/layout';
 
 export default function WestMap() {

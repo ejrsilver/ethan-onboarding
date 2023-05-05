@@ -1,3 +1,4 @@
 # Ignore external resources and dependencies.
 .next/*
+.idea/*
 node_modules/*
