@@ -19,7 +19,7 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
     const buildingData = getBuildingData(params.id)
     return {
         props: {
