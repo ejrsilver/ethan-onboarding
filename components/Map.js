@@ -3,13 +3,11 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 
-export default function Map({buildings}) {
-    console.log(buildings);
-    
+export default function Map({buildings, centre}) {    
     return (
         <MapContainer
         //Centre of Queen's Campus
-        center={[44.226,-76.4960]}
+        center={centre}
         zoom={16}
         scrollWheelZoom={false}
         style={{ height: "100%"}}
@@ -18,9 +16,9 @@ export default function Map({buildings}) {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {buildings.map(({id, long, lat, title}) => (
-                <Marker position={[long, lat]}>
-                    <Popup>{title}</Popup>
+            {buildings.map(({id, 'coords':points, name}) => (
+                <Marker position={points} key={id}>
+                    <Popup>{name}</Popup>
                 </Marker>
             ))}
         </MapContainer>
