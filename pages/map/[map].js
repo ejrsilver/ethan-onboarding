@@ -1,8 +1,8 @@
+import * as react from "react";
 import dynamic from "next/dynamic";
 import Link from 'next/link';
-import  {Container}  from '@mui/material';
-import {Typography} from '@mui/material';
-import {Button} from '@mui/material';
+import {Card, Typography, Button, Stack, AspectRatio}  from '@mui/joy';
+import { Container } from "@mui/material";
 import Layout from '../../components/layout';
 import { getAllMaps, getBuildingsMinimalData, getMapData } from "../../lib/getbuildings";
 
@@ -26,16 +26,16 @@ export async function getStaticPaths() {
 }
 
 export default function Map({mapData, buildingsData}) {
-    const DynMap = dynamic(() => import('../../components/Map-Window'), {ssr: false,});
+    const DynMap = dynamic(() => import('../../components/map-window'), {ssr: false,});
     return(
-        <Layout title={`${mapData.name} Campus - Queen's University Accessible Maps" description="An Accessible Campus Map View for Queen's University.'`}>
-            <Container>
-                <Typography component="h1" variant="h1">{mapData.name} Campus Map</Typography>
-                <Link href="/"><Button variant="contained">Back</Button></Link>
-                <Container sx={{height: 600}}>
-                    <DynMap buildings={buildingsData} centre={mapData.coords}/>
-                </Container>
-            </Container>
+        <Layout title={`${mapData.name} Campus - Queen's University Accessible Maps`} description="An Accessible Campus Map View for Queen's University.">
+            <Stack direction={"column"} spacing={2}>
+                <Stack spacing={2} direction={"row"} justifyContent={"space-between"}>
+                    <Typography level="h1">{mapData.name} Campus Map</Typography>
+                    <Button variant="solid"><Link href="/">Back</Link></Button>
+                </Stack>
+                <DynMap popup={true} zoom={16} buildings={buildingsData} centre={mapData.coords}/>
+            </Stack>
         </Layout>
     );
 }

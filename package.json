@@ -11,6 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/public-sans": "^4.5.12",
+    "@mui/joy": "^5.0.0-alpha.78",
     "@mui/material": "^5.12.3",
     "gray-matter": "^4.0.3",
     "leaflet": "^1.9.3",

@@ -4,24 +4,16 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import Link from "next/link";
 
-export default function Map({buildings, centre}) {    
+export default function Map({popup, zoom, buildings, centre}) {    
     return (
-        <MapContainer
-        //Centre of Queen's Campus
-        center={centre}
-        zoom={16}
-        scrollWheelZoom={false}
-        style={{ height: "100%"}}
-        >
+        <MapContainer center={centre} zoom={zoom} scrollWheelZoom={false} style={{width: "100%", minHeight: "750px"}}>
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {buildings.map(({id, 'coords':points, name}) => (
-                <Marker position={points} key={id}>
-                    <Popup><Link href={`/map/building/${id}`}>{name}</Link></Popup>
-                </Marker>
-            ))}
+            {(popup) ? buildings.map(({id, 'coords':points, name}) => (<Marker position={points} key={id}><Popup><Link href={`/map/building/${id}`}>{name}</Link></Popup></Marker>)) 
+                     : buildings.map(({id, 'coords':points, name}) => (<Marker position={points} key={id}></Marker>))
+            }
         </MapContainer>
     );
 };
