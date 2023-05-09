@@ -2,7 +2,7 @@
   "name": "Abramsky Hall",
   "coords": [44.2255534, -76.489364],
   "addr": "21 Arch Street",
-  "images": ["./public/images/buildings/abramsky-hall-0.jpg"],
+  "images": ["/images/buildings/abramsky-hall-0.jpg"],
   "alts": ["[Abramsky Hall]"],
   "desc": [
     "Completed in 1957, this neo-Georgian building at the corner of Arch and Deacon Streets was the first building on campus dedicated to the study of the science of physiology and initially was called the Physiology Building.",

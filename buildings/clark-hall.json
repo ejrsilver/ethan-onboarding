@@ -1,1 +1,34 @@
-{"name": "Clark Hall", "coords": [44.226719, -76.4939408], "addr": "30 Fifth Field", "images": ["./public/images/buildings/clark-hall-0.jpg", "./public/images/buildings/clark-hall-1.jpg"], "alts": ["[photo of Clark Hall]", "[photo of Clark Hall]"], "desc": ["", "Built between 1949 and 1951, Clark Hall houses the Campus Bookstore and the Clark Hall Pub, run by engineering students.", "It was constructed on the west side of Campus Road (on a site formerly occupied by the Old Mill, a machine shop for engineering students) with money provided entirely by the engineering students, including a significant donation from the Fifth Field Company, a unit of Queen's students which served in WWI.", "The building was intended to provide a meeting place for engineering students -and for many years it was home to the Engineering Society before its offices moved into Beamish-Munro Hall - and a permanent home for the bookstore, which was then called the Technical Supplies Store.", "Clark Hall has been expanded several times: the first addition was completed in 1958 and the second in 1963.", "", "Since 1971, Clark Hall has been the home of the pub run by the Engineering Society and attending \"Ritual\" at Clark Hall Pub - the oldest of the three campus bars - is a tradition remembered fondly by many alumni.", "Clark Hall was named in honour of Arthur Lewis Clark, Dean of Applied Science from 1919 until 1943."], "desc_src": "https://www.queensu.ca/encyclopedia/c/clark-hall", "access": ["Location: Clark Hall is located down Fifth Field Company Lane South of Nicol Hall. The main entrance gives access to the Campus Bookstore, and the side door gives access to Clark Hall Pub.", "Entrances", "North/East\nThe north-east entrance is accessible and have automatic door openers.", "South/East\nThe south-east entrance is accessible and has\u00a0automatic door openers.", "South\nThe south entrance leading to Clark Hall Pub is inaccessible.", "West\nThis entrance is accessible and have automatic entrances.", "Elevators: Interior accessible route to elevator allows access to the main floor, upper level offices, and lower level stacks. There is no elevator access to Clark Hall Pub.", "Washrooms: There are single-user accessible washrooms on basement and second floor with no power door. Single-user washrooms: floor 0 room 20, floor 2 room 225, floor 2 room 226.", "Services: Bookstore staff are available to assist users as needed.", "Parking: Permit parking is available in the parking lot behind Miller Hall. There is one accessible meter space on Union Street across from Miller Hall.", "Link to Clark Hall on the Queen's Campus Map", "Link to Clark Hall on Google Maps", "Clark Hall Floor Plans", "Clark Hall Site Plans"], "map": "https://goo.gl/maps/A7Bkf3iaCjdPf2vL6"}
+{
+  "name": "Clark Hall",
+  "coords": [44.226719, -76.4939408],
+  "addr": "30 Fifth Field",
+  "images": [
+    "/images/buildings/clark-hall-0.jpg",
+    "/images/buildings/clark-hall-1.jpg"
+  ],
+  "alts": ["[photo of Clark Hall]", "[photo of Clark Hall]"],
+  "desc": [
+    "",
+    "Built between 1949 and 1951, Clark Hall houses the Campus Bookstore and the Clark Hall Pub, run by engineering students.",
+    "It was constructed on the west side of Campus Road (on a site formerly occupied by the Old Mill, a machine shop for engineering students) with money provided entirely by the engineering students, including a significant donation from the Fifth Field Company, a unit of Queen's students which served in WWI.",
+    "The building was intended to provide a meeting place for engineering students -and for many years it was home to the Engineering Society before its offices moved into Beamish-Munro Hall - and a permanent home for the bookstore, which was then called the Technical Supplies Store.",
+    "Clark Hall has been expanded several times: the first addition was completed in 1958 and the second in 1963.",
+    "",
+    "Since 1971, Clark Hall has been the home of the pub run by the Engineering Society and attending \"Ritual\" at Clark Hall Pub - the oldest of the three campus bars - is a tradition remembered fondly by many alumni.",
+    "Clark Hall was named in honour of Arthur Lewis Clark, Dean of Applied Science from 1919 until 1943."
+  ],
+  "desc_src": "https://www.queensu.ca/encyclopedia/c/clark-hall",
+  "access": [
+    "Location: Clark Hall is located down Fifth Field Company Lane South of Nicol Hall. The main entrance gives access to the Campus Bookstore, and the side door gives access to Clark Hall Pub.",
+    "Entrances",
+    "North/East\nThe north-east entrance is accessible and have automatic door openers.",
+    "South/East\nThe south-east entrance is accessible and has\u00a0automatic door openers.",
+    "South\nThe south entrance leading to Clark Hall Pub is inaccessible.",
+    "West\nThis entrance is accessible and have automatic entrances.",
+    "Elevators: Interior accessible route to elevator allows access to the main floor, upper level offices, and lower level stacks. There is no elevator access to Clark Hall Pub.",
+    "Washrooms: There are single-user accessible washrooms on basement and second floor with no power door. Single-user washrooms: floor 0 room 20, floor 2 room 225, floor 2 room 226.",
+    "Services: Bookstore staff are available to assist users as needed.",
+    "Parking: Permit parking is available in the parking lot behind Miller Hall. There is one accessible meter space on Union Street across from Miller Hall."
+  ],
+  "map": "https://goo.gl/maps/A7Bkf3iaCjdPf2vL6"
+}

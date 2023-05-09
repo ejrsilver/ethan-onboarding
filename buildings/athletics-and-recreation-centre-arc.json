@@ -1,1 +1,25 @@
-{"name": "Queen's Centre / Athletics and Recreation Centre (ARC)", "coords": [44.2293258, -76.4939861], "addr": "284 Earl Street", "images": ["./public/images/buildings/athletics-and-recreation-centre-arc-0.jpg"], "alts": ["[ARC]"], "desc": ["", "The ARC, which opened in December 2009, is a state of the art fitness facility within the Queen's Centre with a wide variety of programs and activities for the campus and Kingston community.", "The ARC features a 38m x 25m pool, gymnasiums, basketball and volleyball courts, squash/racquetball courts, dance studios, and extensive cardio and weight facilities...", "Learn more about the ARC facilities..."], "desc_src": "https://www.queensu.ca/encyclopedia/a/athletics-and-recreation-centre-arc", "access": ["This building directory entry is under construction", "\u00a0", "Link to\u00a0Queen's Centre\u00a0on the Queen's Campus Map", "Link to\u00a0Queen's Centre on Google Maps", "Floor Plans - N/A", "Site Plans - N/A"], "map": "https://goo.gl/maps/svAD9EDNgRG3ZrUV8"}
+{
+  "name": "Queen's Centre / Athletics and Recreation Centre (ARC)",
+  "coords": [44.2293258, -76.4939861],
+  "addr": "284 Earl Street",
+  "images": [
+    "/images/buildings/athletics-and-recreation-centre-arc-0.jpg"
+  ],
+  "alts": ["[ARC]"],
+  "desc": [
+    "",
+    "The ARC, which opened in December 2009, is a state of the art fitness facility within the Queen's Centre with a wide variety of programs and activities for the campus and Kingston community.",
+    "The ARC features a 38m x 25m pool, gymnasiums, basketball and volleyball courts, squash/racquetball courts, dance studios, and extensive cardio and weight facilities...",
+    "Learn more about the ARC facilities..."
+  ],
+  "desc_src": "https://www.queensu.ca/encyclopedia/a/athletics-and-recreation-centre-arc",
+  "access": [
+    "This building directory entry is under construction",
+    "\u00a0",
+    "Link to\u00a0Queen's Centre\u00a0on the Queen's Campus Map",
+    "Link to\u00a0Queen's Centre on Google Maps",
+    "Floor Plans - N/A",
+    "Site Plans - N/A"
+  ],
+  "map": "https://goo.gl/maps/svAD9EDNgRG3ZrUV8"
+}

@@ -1,1 +1,33 @@
-{"name": "Botterell Hall", "coords": [44.2243318, -76.4914857], "addr": "18 Stuart St", "images": ["./public/images/buildings/botterell-hall-0.jpg"], "alts": ["[photo of Botterell Hall]"], "desc": ["", "Completed in 1979, this nine-story building, located next to Kingston General Hospital, is the main health sciences building at Queen's. It was made possible by the new provincial funding that became available to Queen's after it joined forces with local hospitals and agreed to coordinate its activities with them in a cooperative health sciences complex.", "Botterell Hall contains classrooms, labs, the Centre for Neuroscience Studies, and the Bracken Health Sciences Library.", "A large addition to Botterell Hall for heart, stroke, and cancer research was opened in 1992.", "The building is named after Edmund Harry Botterell, a neurosurgeon, Dean of the Faculty of Medicine from 1962 to 1970, and Vice-Principal (Health Sciences) from 1968 to 1971."], "desc_src": "https://www.queensu.ca/encyclopedia/b/botterell-hall", "access": ["\u00a0", "Entrances", "North\nThe main entrance to Botterell Hall can be reached from the street either by a paved ramp on the east side of the building, towards Barrie Street, or by a level sidewalk on the west side, towards George Street. The main entrance is accessible with a level entrance and automatic openers on the double-doors. Note: Bracken Library's entrance is located off the main lobby with automatic openers. A small elevator within the library provides access to the lower library level and is just past the circulation desk. The library staff will assist with books and journals located on upper shelves.", "Corridors: There are doors that act as barriers in corridors without operator buttons.", "Elevators: Three large elevators service all levels of the building. Each elevator measures 53\u201d wide by 81\u201d long, with doors that open to 42\u201d. Manual double-doors separate the elevator area from and departmental areas. Wheelchair users may need assistance to access these departmental areas on level 2 and the upper building floors.", "Wayfinding: The signage for this building is located outside the main entrance on the corner of Stuart and George Street, engraved into a large stone sign.", "Washrooms: Accessible washrooms are located on level B1 and the lower level of the library. There are no automatic openers for the washroom doors. There are no single-user accessible washrooms in the building. \u00a0", "Services: There are assistant phones by the elevator in B1, and rooms 142, 609 and 980 on levels 1, 6 and 9, respectively.", "Classrooms: Check the classroom website for the accessibility of Botterell Hall classrooms. Check the library website for the accessibility of Bracken Library.", "Parking: Permit parking is available in the parking lot South of the Cancer Research Institute. There is one accessible meter space on Stuart Street in front of Botterell Hall.", "Water Fountain: There is an accessible water fountain with bottle fill station in lower level Bracken Library, on the first-floor main lobby across from 107, and on the 6th floor beside room 660.\u00a0", "Link to Botterell Hall\u00a0on the Queen's Campus Map", "Link to Botterell Hall\u00a0on Google Maps", "Link to Botterell Hall\u00a0Floor\u00a0Plans", "Botterell Hall\u00a0Site Plans"], "map": "https://goo.gl/maps/pnQPuYDGuRTQWqQN7"}
+{
+  "name": "Botterell Hall",
+  "coords": [44.2243318, -76.4914857],
+  "addr": "18 Stuart St",
+  "images": ["/images/buildings/botterell-hall-0.jpg"],
+  "alts": ["[photo of Botterell Hall]"],
+  "desc": [
+    "",
+    "Completed in 1979, this nine-story building, located next to Kingston General Hospital, is the main health sciences building at Queen's. It was made possible by the new provincial funding that became available to Queen's after it joined forces with local hospitals and agreed to coordinate its activities with them in a cooperative health sciences complex.",
+    "Botterell Hall contains classrooms, labs, the Centre for Neuroscience Studies, and the Bracken Health Sciences Library.",
+    "A large addition to Botterell Hall for heart, stroke, and cancer research was opened in 1992.",
+    "The building is named after Edmund Harry Botterell, a neurosurgeon, Dean of the Faculty of Medicine from 1962 to 1970, and Vice-Principal (Health Sciences) from 1968 to 1971."
+  ],
+  "desc_src": "https://www.queensu.ca/encyclopedia/b/botterell-hall",
+  "access": [
+    "\u00a0",
+    "Entrances",
+    "North\nThe main entrance to Botterell Hall can be reached from the street either by a paved ramp on the east side of the building, towards Barrie Street, or by a level sidewalk on the west side, towards George Street. The main entrance is accessible with a level entrance and automatic openers on the double-doors. Note: Bracken Library's entrance is located off the main lobby with automatic openers. A small elevator within the library provides access to the lower library level and is just past the circulation desk. The library staff will assist with books and journals located on upper shelves.",
+    "Corridors: There are doors that act as barriers in corridors without operator buttons.",
+    "Elevators: Three large elevators service all levels of the building. Each elevator measures 53\u201d wide by 81\u201d long, with doors that open to 42\u201d. Manual double-doors separate the elevator area from and departmental areas. Wheelchair users may need assistance to access these departmental areas on level 2 and the upper building floors.",
+    "Wayfinding: The signage for this building is located outside the main entrance on the corner of Stuart and George Street, engraved into a large stone sign.",
+    "Washrooms: Accessible washrooms are located on level B1 and the lower level of the library. There are no automatic openers for the washroom doors. There are no single-user accessible washrooms in the building. \u00a0",
+    "Services: There are assistant phones by the elevator in B1, and rooms 142, 609 and 980 on levels 1, 6 and 9, respectively.",
+    "Classrooms: Check the classroom website for the accessibility of Botterell Hall classrooms. Check the library website for the accessibility of Bracken Library.",
+    "Parking: Permit parking is available in the parking lot South of the Cancer Research Institute. There is one accessible meter space on Stuart Street in front of Botterell Hall.",
+    "Water Fountain: There is an accessible water fountain with bottle fill station in lower level Bracken Library, on the first-floor main lobby across from 107, and on the 6th floor beside room 660.\u00a0",
+    "Link to Botterell Hall\u00a0on the Queen's Campus Map",
+    "Link to Botterell Hall\u00a0on Google Maps",
+    "Link to Botterell Hall\u00a0Floor\u00a0Plans",
+    "Botterell Hall\u00a0Site Plans"
+  ],
+  "map": "https://goo.gl/maps/pnQPuYDGuRTQWqQN7"
+}

@@ -1,1 +1,13 @@
-{"name": "Coastal Engineering Lab", "coords": [44.2303584, -76.5171729], "addr": "950 Johnson Street", "images": [], "alts": [], "desc": "", "desc_src": "https://www.queensu.ca/encyclopedia/c/coastal-engineering-lab", "access": ["This building directory entry is under construction", "\u00a0", "Link to\u00a0Coastal Engineering Lab\u00a0on the Queen's Campus Map", "Link to\u00a0Coastal Engineering Lab on Google Maps", "Coastal Engineering Lab Floor Plans - N/A", "Coastal Engineering Lab Site Plans -N/A"], "map": "https://goo.gl/maps/h5W2dNdRrHCgVjbd7"}
+{
+  "name": "Coastal Engineering Lab",
+  "coords": [44.2303584, -76.5171729],
+  "addr": "950 Johnson Street",
+  "images": ["/images/buildings/coastal-engineering-lab.jpg"],
+  "alts": ["Coastal Engineering Lab"],
+  "desc": "",
+  "desc_src": "https://www.queensu.ca/encyclopedia/c/coastal-engineering-lab",
+  "access": [
+    "This building directory entry is under construction"
+  ],
+  "map": "https://goo.gl/maps/h5W2dNdRrHCgVjbd7"
+}

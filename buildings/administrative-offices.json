@@ -1,1 +1,20 @@
-{"name": "78 Barrie Street", "coords": [44.2247152, -76.4908938], "addr": "78 Barrie Street", "images": [], "alts": [], "desc": "", "desc_src": "https://www.queensu.ca/encyclopedia/a/administrative-offices", "access": ["Location: 78 Barrie Street is located at the intersection of Barrie and Stuart St.", "Main Entrance\n78 Barrie Street is not wheelchair accessible.", "Elevator\nThere is no elevator in the building. Floors 2 and 3 are inaccessible.", "Washrooms\nThere are no accessible washrooms. All washrooms are single-user.", "Campus Map Link - N/A", "Link to 78 Barrie St. on Google Maps", "Floor Plans - N/A", "Site Plans - N/A"], "map": "https://goo.gl/maps/kNrTCt6gZu1sWTUJ6"}
+{
+  "name": "78 Barrie Street",
+  "coords": [44.2247152, -76.4908938],
+  "addr": "78 Barrie Street",
+  "images": ["/images/buildings/administrative-offices.jpg"],
+  "alts": [],
+  "desc": "",
+  "desc_src": "https://www.queensu.ca/encyclopedia/a/administrative-offices",
+  "access": [
+    "Location: 78 Barrie Street is located at the intersection of Barrie and Stuart St.",
+    "Main Entrance\n78 Barrie Street is not wheelchair accessible.",
+    "Elevator\nThere is no elevator in the building. Floors 2 and 3 are inaccessible.",
+    "Washrooms\nThere are no accessible washrooms. All washrooms are single-user.",
+    "Campus Map Link - N/A",
+    "Link to 78 Barrie St. on Google Maps",
+    "Floor Plans - N/A",
+    "Site Plans - N/A"
+  ],
+  "map": "https://goo.gl/maps/kNrTCt6gZu1sWTUJ6"
+}

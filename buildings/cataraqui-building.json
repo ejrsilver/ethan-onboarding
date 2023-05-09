@@ -1,1 +1,26 @@
-{"name": "Cataraqui Building", "coords": [44.2255649, -76.49103050000001], "addr": "92 Barrie St", "images": ["./public/images/buildings/cataraqui-building-0.jpg"], "alts": ["[Cataraqui Building]"], "desc": ["Completed in 1969, the Cataraqui Building is one of two buildings at Queen's named after waterways in the Kingston region; the other is the Rideau Building. The St. Lawrence Building, which was torn down to make room for the construction of Chernoff Hall, was also named for a Kingston waterway, and all three of these buildings were constructed at about the same time.", "The Cataraqui Building has been the home of the School of Nursing since 1982."], "desc_src": "https://www.queensu.ca/encyclopedia/c/cataraqui-building", "access": ["\u00a0", "Location: The Cataraqui Building is located on Barrie Street, South of the Biosciences Complex and Deacon Walk.", "Entrances", "North\nThere is a side door on the North side but it is not accessible.", "East\nThe main entrance to Cataraqui Building is accessible with a level entrance and an automatic door opener.", "Corridors: There are doors that act as barriers in the corridors. These doors do not have operator buttons. There are no lifts or ramps in corridors.", "Elevators: The only elevator in the building is a freight elevator. The doors are very heavy and require a high reach and a great deal of strength to pull. It is not recommended to use this elevator alone.", "Wayfinding: The signage for this building is located on the left side of the building beside the main entrance doors, facing east.", "Washrooms: There is a single-user accessible washroom with no power door on level 1 (Room 124) and level 2 (Room 215).", "Services: There is a private breastfeeding room on the main floor in Room 117. It is designated as a safe and quiet place to breastfeed and or use a breast pump. /The room is also equipped with change tables, electrical outlets, comfortable seating, and educational information for families. There is an assistance phone on level 1 by the front entrance.", "Parking: Permit parking is available in the parking lot behind Humphrey Hall. The entrance to this parking lot is on Arch Street. There is time-limited parking on Barrie, Court and Bagot Streets and one accessible meter space on Stuart Street at George Street.", "Water Fountain: There is an accessible water fountain with bottle fill station on level 1 by Room 133.", "Link to Cataraqui Building\u00a0on the Queen's Campus Map", "Link to Cataraqui Building on Google Maps", "Cataraqui Building Hall Floor\u00a0Plans", "Cataraqui Building Site Plans"], "map": "https://goo.gl/maps/oXxYNJxYPHo93h889"}
+{
+  "name": "Cataraqui Building",
+  "coords": [44.2255649, -76.49103050000001],
+  "addr": "92 Barrie St",
+  "images": ["/images/buildings/cataraqui-building-0.jpg"],
+  "alts": ["[Cataraqui Building]"],
+  "desc": [
+    "Completed in 1969, the Cataraqui Building is one of two buildings at Queen's named after waterways in the Kingston region; the other is the Rideau Building. The St. Lawrence Building, which was torn down to make room for the construction of Chernoff Hall, was also named for a Kingston waterway, and all three of these buildings were constructed at about the same time.",
+    "The Cataraqui Building has been the home of the School of Nursing since 1982."
+  ],
+  "desc_src": "https://www.queensu.ca/encyclopedia/c/cataraqui-building",
+  "access": [
+    "Location: The Cataraqui Building is located on Barrie Street, South of the Biosciences Complex and Deacon Walk.",
+    "Entrances",
+    "North\nThere is a side door on the North side but it is not accessible.",
+    "East\nThe main entrance to Cataraqui Building is accessible with a level entrance and an automatic door opener.",
+    "Corridors: There are doors that act as barriers in the corridors. These doors do not have operator buttons. There are no lifts or ramps in corridors.",
+    "Elevators: The only elevator in the building is a freight elevator. The doors are very heavy and require a high reach and a great deal of strength to pull. It is not recommended to use this elevator alone.",
+    "Wayfinding: The signage for this building is located on the left side of the building beside the main entrance doors, facing east.",
+    "Washrooms: There is a single-user accessible washroom with no power door on level 1 (Room 124) and level 2 (Room 215).",
+    "Services: There is a private breastfeeding room on the main floor in Room 117. It is designated as a safe and quiet place to breastfeed and or use a breast pump. /The room is also equipped with change tables, electrical outlets, comfortable seating, and educational information for families. There is an assistance phone on level 1 by the front entrance.",
+    "Parking: Permit parking is available in the parking lot behind Humphrey Hall. The entrance to this parking lot is on Arch Street. There is time-limited parking on Barrie, Court and Bagot Streets and one accessible meter space on Stuart Street at George Street.",
+    "Water Fountain: There is an accessible water fountain with bottle fill station on level 1 by Room 133."
+  ],
+  "map": "https://goo.gl/maps/oXxYNJxYPHo93h889"
+}

@@ -2,7 +2,7 @@
   "name": "186 Barrie St",
   "coords": [44.2284122, -76.4911665],
   "addr": "186 Barrie St",
-  "images": [],
+  "images": ["/images/buildings/186-barrie-st.jpg"],
   "alts": [],
   "desc": "",
   "desc_src": "https://www.queensu.ca/encyclopedia/1/186-barrie-street",
