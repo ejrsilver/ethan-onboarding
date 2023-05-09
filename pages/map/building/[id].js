@@ -1,5 +1,5 @@
-import Layout from "../../components/layout";
-import { getBuildingData, getAllIds } from "../../lib/getbuildings";
+import Layout from "../../../components/layout";
+import { getBuildingData, getAllIds } from "../../../lib/getbuildings";
 
 export default function Building({ buildingData }) {
     return (

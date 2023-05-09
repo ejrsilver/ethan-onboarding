@@ -11,8 +11,8 @@ export default function HomePage() {
         <Container>
                 <Image src="/images/Queens_University_logo.png" width={500} height={500} alt="Queen's University"/>
                 <Typography component="h1" variant="h1">Accessible Maps</Typography>
-                <Link href="/main-campus/map-view"><Button variant="contained">View Main Campus</Button></Link>
-                <Link href="/west-campus/map-view"><Button variant="contained">View West Campus</Button></Link>
+                <Link href="/map/main"><Button variant="contained">View Main Campus</Button></Link>
+                <Link href="/map/west"><Button variant="contained">View West Campus</Button></Link>
         </Container>
         </Layout>
     );
