@@ -32,7 +32,7 @@ export default function Map({mapData, buildingsData}) {
             <Stack direction={"column"} spacing={2}>
                 <Stack spacing={2} direction={"row"} justifyContent={"space-between"}>
                     <Typography level="h1">{mapData.name} Campus Map</Typography>
-                    <Button variant="solid"><Link href="/">Back</Link></Button>
+                    <Button variant="solid" sx={{width: 150}}><Link href="/">Back</Link></Button>
                 </Stack>
                 <DynMap popup={true} zoom={16} buildings={buildingsData} centre={mapData.coords}/>
             </Stack>

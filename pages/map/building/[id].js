@@ -3,7 +3,7 @@ import { getBuildingData, getAllIds } from "../../../lib/getbuildings";
 import { Button, Card, Typography, Stack } from "@mui/joy";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Carousel from "../../../components/carousel";
 
 export default function Building({ coords, buildingData }) {
     const DynMap = dynamic(() => import('../../../components/map-window'), {ssr: false,});
@@ -13,19 +13,18 @@ export default function Building({ coords, buildingData }) {
             <Stack direction={"column"} spacing={2}>           
                 <Stack spacing={2} direction={"row"} justifyContent={"space-between"}>
                     <Typography level="h1">{buildingData.name}</Typography>
-                    <Button variant="solid"><Link href="/map/main">Back</Link></Button>
+                    <Button variant="solid" sx={{width: 150}}><Link href="/map/main">Back</Link></Button>
                 </Stack>
 
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row-reverse" spacing={2}>
                     <DynMap popup={false} zoom={20} buildings={[buildingData]} centre={buildingData.coords}/>
-                    <Card>
+                    <Stack direction={"column"} spacing={2} sx={{width:"50%"}}>
                         <Typography level="h2">{buildingData.addr}</Typography>
-                        {buildingData.images.map(({src, alt}) => {
-                            <Image href={src} alt={alt}/>
-                        })}
-                        {buildingData.access.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}
-                        <Typography>{JSON.stringify(coords)}</Typography>
-                    </Card>
+                        <Carousel images={buildingData.images} />
+                        <Stack direction={"column"}>
+                            {buildingData.access.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}
+                        </Stack>
+                    </Stack>
                 </Stack>
             </Stack>
         </Layout>
