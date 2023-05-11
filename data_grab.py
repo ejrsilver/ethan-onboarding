@@ -1,9 +1,9 @@
 import json
 import os
-import re
-import pandas as pd
+import asyncio
 import requests
-import pymysql
+import pandas as pd
+import urllib
 from bs4 import BeautifulSoup
 
 # Get names and addresses
@@ -102,14 +102,15 @@ for x in range(len(data)):
         for item in soup.find_all('img'):
             # Ignore SVGs (menu icons, queen's logo, etc.)
             if str(item)[len(item) - 6:len(item) - 3] != "svg":
-                out_str = str("./public/images/buildings/" + d_name + "-" + str(z) + ".jpg")
+                out_str = str("/images/buildings/" + d_name + "-" + str(z) + ".jpg")
                 try:
                     # Try to write the image to local storage.
                     with open(out_str, 'wb') as handler:
                         handler.write(requests.get(("https://www.queensu.ca" + item['src'])).content)
                         images.append(out_str)
-                        # Get the alt text (wouldn't be much of an accessibility app if visually-impaired can't use it)
                         alts.append(item['alt'])
+                        z += 1
+                        # Get the alt text (wouldn't be much of an accessibility app if visually-impaired can't use it)
                 except:
                     try:
                         # Accounting for some WebPublish 2 legacy formatting.
@@ -117,14 +118,19 @@ for x in range(len(data)):
                             handler.write(requests.get(("https://www.queensu.ca" + item['data-src'])).content)
                             images.append(out_str)
                             alts.append(item['alt'])
+                            z += 1
                     except Exception as e:
                         print(e)
-                z += 1
-        if z == 0:
-            # If no images found, use one of the ones I downloaded manually.
-            images.append("./public/images/buildings/" + d_name + ".jpg")
     else:
         print(url)
+        url = ""
+        text = str(data.iloc[x, 0])
+        
+    if len(images) == 0:
+        # If no images found, use one of the ones I downloaded manually.
+        images.append("/images/buildings/" + d_name + ".jpg")
+        alts.append("Street view of " + str(data.iloc[x, 0]) + ".")
+
 
     # Get accessibility description
     sp_2 = BeautifulSoup(requests.get("https://www.queensu.ca" + link_table[x + 1][0][0]).text, 'html.parser')
@@ -142,13 +148,16 @@ for x in range(len(data)):
     lat = float(temp[0])
     long = float(temp[1]) + .0021
 
+    # Get co-ordinates
+    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json&limit=1").lower().replace(" ", "+"))
+    coord_resp = coord_resp.json()
+    print(str(data.iloc[x, 1]))
     dictionary = {
         "name": str(data.iloc[x, 0]),
-        "coords": [lat, long],
+        "coords": [coord_resp[0]["lat"], coord_resp[0]["lon"]] if (coord_resp != []) else [lat, long],
         "addr": str(data.iloc[x, 1]),
-        "images": images,
-        "alts": alts,
-        "desc": text,
+        "images": [{'src':images[i], 'alt':alts[i]} for i in range(len(images))],
+        "desc": [st for st in text if ("Link to " not in st)],
         "desc_src": url,
         "access": acc_des,
         "map": shorturl

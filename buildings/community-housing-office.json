@@ -1,18 +1,1 @@
-{
-  "name": "Community Housing Office",
-  "coords": [44.2290648, -76.4954041],
-  "addr": "169 University Avenue",
-  "images": ["/images/buildings/community-housing-office.jpg"],
-  "alts": ["Street view of the Community Housing Office."],
-  "desc": "",
-  "desc_src": "https://www.queensu.ca/encyclopedia/c/community-housing-office",
-  "access": [
-    "This building directory entry is under construction.",
-    "\u00a0",
-    "Link to\u00a0Community Housing Office on the Queen's Campus Map",
-    "Link to\u00a0Community\u00a0Office Housing\u00a0on Google Maps",
-    "Community Housing Office\u00a0Floor Plans - N/A",
-    "Community Housing Office\u00a0Site Plans - N/A"
-  ],
-  "map": "https://goo.gl/maps/5MnEgGnu41Agie3r9"
-}
+{"name": "Community Housing Office", "coords": ["44.2290599", "-76.4954982"], "addr": "169 University Avenue", "images": [{"src": "/images/buildings/community-housing-office.jpg", "alt": "Street view of Community Housing Office."}], "desc": ["C", "o", "m", "m", "u", "n", "i", "t", "y", " ", "H", "o", "u", "s", "i", "n", "g", " ", "O", "f", "f", "i", "c", "e"], "desc_src": "", "access": ["This building directory entry is under construction.", "\u00a0", "Link to\u00a0Community Housing Office on the Queen's Campus Map", "Link to\u00a0Community\u00a0Office Housing\u00a0on Google Maps", "Community Housing Office\u00a0Floor Plans - N/A", "Community Housing Office\u00a0Site Plans - N/A"], "map": "https://goo.gl/maps/5MnEgGnu41Agie3r9"}

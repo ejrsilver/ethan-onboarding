@@ -1,4 +1,7 @@
 # Ignore external resources and dependencies.
-.next/*
-.idea/*
-node_modules/*
+.idea
+.next
+.env
+node_modules
+.vscode/settings.json
+djangoapi/*
