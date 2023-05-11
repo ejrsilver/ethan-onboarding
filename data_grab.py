@@ -1,9 +1,6 @@
 import json
-import os
-import asyncio
 import requests
 import pandas as pd
-import urllib
 from bs4 import BeautifulSoup
 
 # Get names and addresses
@@ -26,6 +23,8 @@ link_table = \
 for x in range(len(data)):
     # Generate Tag (there are many inconsistent tags that were accounted for).
     d_name = str(data.iloc[x, 0]).lower().replace(" ", "-")
+    name = str(data.iloc[x,0]).replace("Lab", "Laboratory").replace(" Le-Caine", "-LeCaine")
+
     match d_name:
         case "the-university-club":
             d_name = "university-club-queens"
@@ -103,9 +102,10 @@ for x in range(len(data)):
             # Ignore SVGs (menu icons, queen's logo, etc.)
             if str(item)[len(item) - 6:len(item) - 3] != "svg":
                 out_str = str("/images/buildings/" + d_name + "-" + str(z) + ".jpg")
+                img_str = str("./public/images/buildings/" + d_name + "-" + str(z) + ".jpg")
                 try:
                     # Try to write the image to local storage.
-                    with open(out_str, 'wb') as handler:
+                    with open(img_str, 'wb') as handler:
                         handler.write(requests.get(("https://www.queensu.ca" + item['src'])).content)
                         images.append(out_str)
                         alts.append(item['alt'])
@@ -114,7 +114,7 @@ for x in range(len(data)):
                 except:
                     try:
                         # Accounting for some WebPublish 2 legacy formatting.
-                        with open(out_str, 'wb') as handler:
+                        with open(img_str, 'wb') as handler:
                             handler.write(requests.get(("https://www.queensu.ca" + item['data-src'])).content)
                             images.append(out_str)
                             alts.append(item['alt'])
@@ -122,7 +122,6 @@ for x in range(len(data)):
                     except Exception as e:
                         print(e)
     else:
-        print(url)
         url = ""
         text = str(data.iloc[x, 0])
         
@@ -145,16 +144,37 @@ for x in range(len(data)):
         longurl = "https://www.google.ca/maps/place//@44.2246547,-76.4993621,18z"
     # Get Coordinates From Google Maps
     temp = longurl.split('/')[6].replace('@','').split(',')
-    lat = float(temp[0])
+    latg = float(temp[0])
     long = float(temp[1]) + .0021
 
-    # Get co-ordinates
-    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json&limit=1").lower().replace(" ", "+"))
+    # Get co-ordinates (with name)
+    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + name.replace("Macintosh", "Mackintosh") + ",+kingston,+ontario&format=json&limit=1").lower().replace(" ", "+"))
     coord_resp = coord_resp.json()
-    print(str(data.iloc[x, 1]))
+
+    # If grabbing with the name failed, grab with just address (may not be centred correctly)
+    if (coord_resp == []):
+        coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json").lower().replace(" ", "+"))
+        coord_resp = coord_resp.json()
+    
+    lat = 0.0
+    lon = 0.0
+
+    # Take the average of results (potentially increasing accuracy)
+    for i in coord_resp:
+        lat += float(i["lat"])
+        lon += float(i["lon"])
+        print(name + " " + str(data.iloc[x, 1]))
+        print(i["display_name"])
+    
+    # Handle divide by zero
+    if (coord_resp != []):
+        lat = lat/len(coord_resp)
+        lon = lon/len(coord_resp)
+        print(len(coord_resp))
+
     dictionary = {
-        "name": str(data.iloc[x, 0]),
-        "coords": [coord_resp[0]["lat"], coord_resp[0]["lon"]] if (coord_resp != []) else [lat, long],
+        "name": name,
+        "coords": [lat, lon] if (coord_resp != []) else [latg, long],
         "addr": str(data.iloc[x, 1]),
         "images": [{'src':images[i], 'alt':alts[i]} for i in range(len(images))],
         "desc": [st for st in text if ("Link to " not in st)],
