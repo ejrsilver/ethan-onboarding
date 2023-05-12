@@ -21,9 +21,9 @@ export default function Building({ coords, buildingData }) {
                     <Stack direction={"column"} spacing={2} sx={{width:"50%"}}>
                         <Typography level="h2">{buildingData.addr}</Typography>
                         <Carousel images={buildingData.images} />
-                        <Stack direction={"column"}>
+                        <Card variant="outlined" className="fixed-size-scroll-window-hide" sx={{maxHeight: 400, overflow: "scroll"}}>
                             {buildingData.access.map((value) => (<Typography level="p" key={value}>{value}</Typography>))}
-                        </Stack>
+                        </Card>
                     </Stack>
                 </Stack>
             </Stack>
