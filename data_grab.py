@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 
 # Get names and addresses
 acc_url = "https://www.queensu.ca/facilities/accessibility/building-directory"
-data = pd.read_html(acc_url)[0]
 
+data = pd.read_html(acc_url)[0]
 # Get the link table. Pandas doesn't preserve hyperlinks.
 sp_acc = BeautifulSoup(requests.get(acc_url).text, 'html.parser')
 link_table = \
@@ -33,10 +33,12 @@ for x in range(len(data)):
         case "school-of-kinesiology-and-health-studies":
             d_name = "kinesiology-and-health-studies-school"
         case "richardson-lab":
+            name = "Richardson Laboratory"
             d_name = "richardson-laboratory"
         case "richardson-stadium":
             d_name = "george-richardson-memorial-stadium"
         case "queen's-centre-/-athletics-and-recreation-centre-(arc)":
+            name = "Queen's Athletics Recreation Centre"
             d_name = "athletics-and-recreation-centre-arc"
         case "new-medical-building":
             d_name = "school-medicine-building"
@@ -78,6 +80,7 @@ for x in range(len(data)):
             d_name = "katherine-bermingham-macklem-house"
         case "184-union-st":
             d_name = "queens_daycare"
+            name = "Queen's Day Care Centre"
         case "186-barrie-st":
             d_name = "186-barrie-street"
 
@@ -92,10 +95,12 @@ for x in range(len(data)):
     text = ""
     images = []
     alts = []
+    links = []
 
     # If the expected entry exists.
     if req_response.status_code == 200:
         soup = BeautifulSoup(req_response.text, 'html.parser')
+
         text = [i.text for i in soup.find_all('article')[0].find_all('p')]
         # Get all images in the page.
         for item in soup.find_all('img'):
@@ -123,7 +128,7 @@ for x in range(len(data)):
                         print(e)
     else:
         url = ""
-        text = str(data.iloc[x, 0])
+        text = name
         
     if len(images) == 0:
         # If no images found, use one of the ones I downloaded manually.
@@ -133,7 +138,53 @@ for x in range(len(data)):
 
     # Get accessibility description
     sp_2 = BeautifulSoup(requests.get("https://www.queensu.ca" + link_table[x + 1][0][0]).text, 'html.parser')
-    acc_des = [i.text for i in sp_2.find_all('article')[0].find_all('p')]
+    
+    acc_des = []
+    location = ""
+    entrances = []
+    elevators = ""
+    corridors = ""
+    wayfinding = ""
+    washrooms = ""
+    fountains = ""
+    classrooms = ""
+    services = ""
+    parking = ""
+
+    for i in sp_2.find_all('article')[0].find_all('p'):
+        p = i.text.replace("\u00a0", " ")
+        
+        if p.find("Location") != -1:
+            location = p.replace("Location: ", "")
+        elif p.find("Entrances") != -1 or \
+            (p.find("North") != -1 and p.find("Northern") == -1) or \
+            (p.find("East")  != -1 and p.find("Eastern")  == -1) or \
+            (p.find("West")  != -1 and p.find("Western")  == -1) or \
+            (p.find("South") != -1 and p.find("Southern") == -1) or \
+            p.find("Other Entrances") != -1 or \
+            p.find("Other entrances") != -1:
+
+            entrances.append(p.replace("Entrances: ", ""))
+        elif p.find("Corridor") != -1 or p.find("Corridors") != -1:
+            corridors = p.replace("Corridors: ", "")
+        elif p.find("Wayfinding") != -1:
+            wayfinding = p.replace("Wayfinding: ", "")
+        elif p.find("Washrooms") != -1:
+            washrooms = p.replace("Washrooms: ", "")
+        elif p.find("Water Fountain") != -1:
+            fountains = p.replace("Water Fountain: ", "")
+        elif p.find("Classrooms") != -1:
+            classrooms = p.replace("Classrooms: ", "")
+        elif p.find("Services") != -1:
+            services = p.replace("Services: ", "")
+        elif p.find("Parking") != -1:
+            parking = p.replace("Parking: ", "")
+        elif p.find("Elevators") != -1:
+            elevators = p.replace("Elevators: ", "")
+        else:
+            acc_des.append(p)
+    
+    print(name + " " + str(data.iloc[x, 1]))
 
     # Convert shortened Google Maps links to long-form.
     shorturl = link_table[x + 1][4][len(link_table[x + 1][4]) - 1]
@@ -148,12 +199,12 @@ for x in range(len(data)):
     long = float(temp[1]) + .0021
 
     # Get co-ordinates (with name)
-    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + name.replace("Macintosh", "Mackintosh") + ",+kingston,+ontario&format=json&limit=1").lower().replace(" ", "+"))
+    coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + name.replace("ASUS Offices", "ASUS Core") + ",+kingston,+ontario&format=json&limit=1").lower().replace(" ", "+"))
     coord_resp = coord_resp.json()
 
     # If grabbing with the name failed, grab with just address (may not be centred correctly)
     if (coord_resp == []):
-        coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json").lower().replace(" ", "+"))
+        coord_resp = requests.get(("http://localhost:8080/?addressdetails=1&q=" + str(data.iloc[x, 1]) + ",+kingston&format=json&limit=1").lower().replace(" ", "+"))
         coord_resp = coord_resp.json()
     
     lat = 0.0
@@ -163,23 +214,30 @@ for x in range(len(data)):
     for i in coord_resp:
         lat += float(i["lat"])
         lon += float(i["lon"])
-        print(name + " " + str(data.iloc[x, 1]))
-        print(i["display_name"])
     
     # Handle divide by zero
     if (coord_resp != []):
         lat = lat/len(coord_resp)
         lon = lon/len(coord_resp)
-        print(len(coord_resp))
 
     dictionary = {
         "name": name,
         "coords": [lat, lon] if (coord_resp != []) else [latg, long],
         "addr": str(data.iloc[x, 1]),
         "images": [{'src':images[i], 'alt':alts[i]} for i in range(len(images))],
-        "desc": [st for st in text if ("Link to " not in st)],
+        "desc": [i for i in text if (i != "")],
+        "location" : location,
+        "entrances" : [i for i in entrances if ("Entrances" not in i)],
+        "corridors" : corridors,
+        "wayfinding" : wayfinding,
+        "washrooms" : washrooms,
+        "fountains" : fountains,
+        "classrooms" : classrooms,
+        "elevators" : elevators,
+        "services" : services,
+        "parking" : parking,
         "desc_src": url,
-        "access": acc_des,
+        "access": [st for st in acc_des if ("Link to " not in st) and ("Floor Plans" not in st) and ("Site Plans" not in st) and ("Floor Plan" not in st) and ("Site Plan" not in st)],
         "map": shorturl
     }
 
