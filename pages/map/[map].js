@@ -34,7 +34,7 @@ export default function Map({mapData, buildingsData}) {
                     <Typography level="h1">{mapData.name} Campus Map</Typography>
                     <Link href="/"><Button variant="solid" sx={{width: 150, height: 70}}>Back</Button></Link>
                 </Stack>
-                <DynMap popup={true} zoom={16} buildings={buildingsData} centre={mapData.coords}/>
+                <DynMap popup={true} zoom={16} buildings={buildingsData} centre={mapData.coords} height="750px"/>
             </Stack>
         </Layout>
     );

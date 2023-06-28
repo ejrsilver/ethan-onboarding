@@ -4,9 +4,9 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import Link from "next/link";
 
-export default function Map({popup, zoom, buildings, centre}) {    
+export default function Map({popup, zoom, buildings, centre, height}) {    
     return (
-        <MapContainer center={centre} zoom={zoom} scrollWheelZoom={false} style={{width: "100%", minHeight: "750px"}}>
+        <MapContainer center={centre} zoom={zoom} scrollWheelZoom={false} style={{width: "100%", minHeight: height}}>
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
